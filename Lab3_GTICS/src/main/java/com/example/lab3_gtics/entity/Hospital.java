@@ -9,10 +9,11 @@ import lombok.Setter;
 @Entity
 @Table(name = "hospital")
 public class Hospital {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int idHospital;
+    private int id;
 
     @Column(name = "nombre")
     private String nombre;

@@ -16,7 +16,7 @@ public class Paciente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int idPaciente;
+    private int id;
 
     @Column(name = "nombre")
     private String nombre;
@@ -36,10 +36,12 @@ public class Paciente {
     @Column(name = "numero_habitacion")
     private int numeroHabitacion;
 
-    @Column(name = "doctor_id")
-    private int idDoctor;
+    @ManyToOne
+    @JoinColumn(name = "doctor_id")
+    private Doctor doctor;
 
-    @Column(name = "hospital_id")
-    private int idHospital;
+    @ManyToOne
+    @JoinColumn(name = "hospital_id")
+    private Hospital hospital;
 
 }

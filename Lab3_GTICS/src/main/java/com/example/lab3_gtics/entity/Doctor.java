@@ -12,13 +12,15 @@ public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int idDoctor;
+    private int id;
+
     @Column(name = "nombre")
     private String nombre;
 
     @Column(name = "especialidad")
     private String especialidad;
 
-    @Column(name = "hospital_id")
-    private int idHospital;
+    @ManyToOne
+    @JoinColumn(name = "hospital_id")
+    private Hospital hospital;
 }
